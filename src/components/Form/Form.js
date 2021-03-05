@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { v4 as id } from 'uuid';
+import { v4 as id } from "uuid";
+import styles from "./Form.module.css";
 id();
 
 class Form extends Component {
@@ -7,27 +8,28 @@ class Form extends Component {
     name: "",
     number: "",
   };
-  hadleChange = (event) => {
-    // console.log("input:", event.target.name);
-    // console.log("value:", event.target.value);
+
+  handleChange = (event) => {
+    // console.log("input: ", event.target.name);
+    // console.log("value: ", event.target.value);
     // console.dir(event.target);
     const { name, value } = event.target;
-
     this.setState({
       [name]: value,
     });
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    const {name, number} = this.state
+    const { name, number } = this.state;
     const contact = {
-      id:id(),
-      number:number,
-      name:name,
-    }
-    console.log(contact)
-    this.props.addContact(contact)
+      id: id(),
+      number: number,
+      name: name,
+    };
+    console.log(contact);
+    this.props.addContact(contact);
   };
+
   render() {
     return (
       <>
@@ -37,16 +39,16 @@ class Form extends Component {
             type="text"
             required
             name="name"
-            onChange={this.handleSubmit}
-          ></input>
+            onChange={this.handleChange}
+          />
           <label>Number</label>
           <input
             type="text"
             required
-            name="name"
-            onChange={this.handleSubmit}
-          ></input>
-          <button type="submit">Add contact</button>
+            name="number"
+            onChange={this.handleChange}
+          />
+          <button type="submit" >Add contact</button>
         </form>
       </>
     );

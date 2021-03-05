@@ -12,8 +12,8 @@ const Contactlist = ({ contacts, deleteContact }) => {
           console.log(item);
           const { name, id, number } = item;
           return (
-            <CSSTransition key={id} timeout={250} classNames={styles}>
-              <ContactlistItem name={name} number={number} id={id} deleteContact={deleteContact} />
+            <CSSTransition key={id} timeout={250} classNames={styles} >
+              <ContactlistItem name={name} number={number} id={id} deleteContact={deleteContact}/>
             </CSSTransition>
           );
         })}

@@ -1,1 +1,1 @@
-export {defaul as Filter} from "react";
+export {default as Filter} from "./Filter"

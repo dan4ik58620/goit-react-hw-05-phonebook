@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { Component } from "react";
-import Form from "./components/Form";
-import Contactlist from "./components/Contactlist";
-import { Filter } from "./components/Filter/Filter";
+import { Form } from "./components/Form";
+import { Contactlist } from "./components/Contactlist";
+import { Filter } from "./components/Filter";
 
 class App extends Component {
   state = {
@@ -24,7 +24,7 @@ class App extends Component {
 
   deleteContact = (id) => {
     this.setState((prevState) => ({
-      contacts: prevState.contact.filter((contact) => contact.id!==id),
+      contacts: prevState.contacts.filter((contact) => contact.id !== id),
     }));
   };
 
@@ -41,8 +41,13 @@ class App extends Component {
     );
     return (
       <>
-        <Form />
-        <Contactlist contacts={contacts} />
+        <Form addContact={this.addContact} />
+        <Filter
+          filteredContacts={this.handleFilterChange}
+          value={this.state.filter}
+          onChange={this.handleFilterChange}
+        />
+        <Contactlist contacts={filteredContacts} deleteContact={this.deleteContact} />
       </>
     );
   }
