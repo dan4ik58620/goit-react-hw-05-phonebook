@@ -2,7 +2,7 @@
   "name": "goit-react-hw-05-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/dan4ik58620/goit-react-hw-05-phonebook",
+  "homepage": "https://github.com/dan4ik58620/goit-react-hw-06-phonebook",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
