@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { v4 as id } from "uuid";
-import styles from "./Form.module.css";
+
 id();
 
 class Form extends Component {
@@ -10,8 +10,8 @@ class Form extends Component {
   };
 
   handleChange = (event) => {
-    // console.log("input: ", event.target.name);
-    // console.log("value: ", event.target.value);
+    console.log("input: ", event.target.name);
+    console.log("value: ", event.target.value);
     // console.dir(event.target);
     const { name, value } = event.target;
     this.setState({
@@ -33,6 +33,7 @@ class Form extends Component {
   render() {
     return (
       <>
+
         <form onSubmit={this.handleSubmit}>
           <label>Name</label>
           <input
@@ -48,10 +49,14 @@ class Form extends Component {
             name="number"
             onChange={this.handleChange}
           />
+
           <button type="submit" >Add contact</button>
+
         </form>
       </>
     );
+   
+
   }
 }
 
